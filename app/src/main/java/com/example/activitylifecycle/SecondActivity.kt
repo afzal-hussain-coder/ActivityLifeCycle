@@ -1,15 +1,21 @@
 package com.example.activitylifecycle
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
   val TAG="SecondActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
+        Log.d(TAG,"onCreate")
 
+        btnOpenDialog.setOnClickListener {
+            openDialog()
+        }
     }
     override fun onStart() {
         super.onStart()
@@ -39,5 +45,13 @@ class SecondActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG,"onDestroy")
+    }
+
+    fun openDialog(){
+        val dialog = Dialog(this).apply {
+            setTitle("Hello")
+            show()
+        }
+
     }
 }
