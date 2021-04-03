@@ -48,7 +48,7 @@ class SecondActivity : AppCompatActivity() {
         Log.d(TAG,"onDestroy")
     }
 
-    fun openDialog(){
+    private fun openDialog(){
         val dialog = Dialog(this).apply {
             setTitle("Hello")
             setContentView(R.layout.custome_dialog)
