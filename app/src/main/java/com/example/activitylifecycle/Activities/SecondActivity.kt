@@ -1,9 +1,12 @@
-package com.example.activitylifecycle
+package com.example.activitylifecycle.Activities
 
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.activitylifecycle.Fragment.OneFragment
+import com.example.activitylifecycle.Fragment.SecondFragment
+import com.example.activitylifecycle.R
 import kotlinx.android.synthetic.main.activity_second.*
 import kotlinx.android.synthetic.main.custome_dialog.*
 
@@ -13,14 +16,34 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         Log.d(TAG,"onCreate")
-
         btnOpenDialog.setOnClickListener {
             openDialog()
         }
+
+        btnOpenOneFragment.setOnClickListener { addFirtsFragment() }
+        btnOpenSecondFragment.setOnClickListener {addSecondFragment() }
     }
     override fun onStart() {
         super.onStart()
         Log.d(TAG,"onStart")
+
+    }
+
+    fun addFirtsFragment(){
+        val fragementMetanager=supportFragmentManager
+        val transition= fragementMetanager.beginTransaction()
+        val oneFragment=OneFragment()
+        transition.add(R.id.container,oneFragment)
+        transition.addToBackStack(null)
+        transition.commit()
+    }
+    fun addSecondFragment(){
+        val fragementMetanager=supportFragmentManager
+        val transition= fragementMetanager.beginTransaction()
+        val oneFragment=SecondFragment()
+        transition.add(R.id.container,oneFragment)
+        transition.addToBackStack(null)
+        transition.commit()
     }
 
     override fun onResume() {

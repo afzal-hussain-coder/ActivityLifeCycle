@@ -11,8 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivityLifeCycle"
         tools:ignore="AllowBackup">
-        <activity android:name=".SecondActivity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.SecondActivity"/>
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,18 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    android:background="@color/white"
+    tools:context=".Activities.SecondActivity">
 
     <Button
         android:id="@+id/btnOpenDialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:text="OPEN DIALOG"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/btnOpenOneFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btnOpenDialog"
+        android:text="OPEN ONE FRAGMENT"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"/>
+    <Button
+        android:id="@+id/btnOpenSecondFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btnOpenOneFragment"
+        android:text="OPEN SECOND FRAGMENT"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"/>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/btnOpenSecondFragment"/>
 
 </RelativeLayout>

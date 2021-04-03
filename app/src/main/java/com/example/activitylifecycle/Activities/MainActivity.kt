@@ -1,10 +1,11 @@
-package com.example.activitylifecycle
+package com.example.activitylifecycle.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import com.example.activitylifecycle.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG,"onCreate")
 
         btnSwitchToActivity.setOnClickListener {
-            val intent=Intent(this,SecondActivity::class.java)
+            val intent=Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
     }
@@ -53,9 +54,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
         super.onSaveInstanceState(outState, outPersistentState)
+        Log.d(TAG,"onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
+        Log.d(TAG,"onRestoreInstanceState")
     }
 }
