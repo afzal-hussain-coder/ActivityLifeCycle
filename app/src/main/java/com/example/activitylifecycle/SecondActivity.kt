@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_second.*
+import kotlinx.android.synthetic.main.custome_dialog.*
 
 class SecondActivity : AppCompatActivity() {
   val TAG="SecondActivity"
@@ -50,8 +51,10 @@ class SecondActivity : AppCompatActivity() {
     fun openDialog(){
         val dialog = Dialog(this).apply {
             setTitle("Hello")
+            setContentView(R.layout.custome_dialog)
             show()
         }
+        dialog.imageView.setOnClickListener { dialog.dismiss() }
 
     }
 }
